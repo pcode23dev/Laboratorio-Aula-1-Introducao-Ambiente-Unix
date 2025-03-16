@@ -3,9 +3,6 @@
         "*.sqlbook": "sql",
         "*.ndjson": "jsonl",
         "*.dbclient-js": "javascript",
-        "list.h": "c",
-        "time.h": "c",
-        "tadgestor.h": "c",
-        "string.h": "c"
+        "tad.h": "c"
     }
 }

@@ -8,7 +8,6 @@
 #include <time.h>
 #include "list.h"
 
-// Paulo
 
 /*
  * main program
@@ -18,7 +17,7 @@ int main(int argc, char *argv[])
 {
   list_t *list;
  
-  printf("<<BEGIN>>\n");
+  printf("< < BEGIN > >\n");
 
   /* initialize list */
   list = lst_new();
@@ -50,7 +49,7 @@ int main(int argc, char *argv[])
   /* clean up list */
   lst_destroy(list);
 
-  printf("<<END>>\n");
+  printf("< < END > > \n");
 
   return 0;
 }

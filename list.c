@@ -48,7 +48,24 @@ void insert_new_process(list_t *list, int pid, time_t starttime)
 
 void update_terminated_process(list_t *list, int pid, time_t endtime)
 {
-   printf("teminated process with pid: %d\n", pid);
+	int isFound = 0;
+	lst_iitem_t *item = list->first;
+
+	if (item){
+		printf("> > > Finishing process with PID: %d\n", pid);
+		do{
+			if (item->pid == pid){
+				isFound = 1;
+				item->endtime = endtime;
+			} 
+			item = item->next;
+		} while (item != NULL && isFound != 1); 
+	} else {
+		printf("> > > Process list empyte");
+	}
+	
+	isFound == 1 ? printf("      Process finished\n"): printf("      Process not found\n");
+
 }
 
 
@@ -56,13 +73,14 @@ void lst_print(list_t *list)
 {
 	lst_iitem_t *item;
 
-	printf("Process list with start and end time:\n");
+	printf("\n> > > Process list with start and end time:\n");
 	item = list->first;
-	while(1){ /* use it only to demonstrate gdb potencial */
-	/*while (item != NULL){*/
-		printf("%d\t%s", item->pid, ctime(&(item->starttime)));
-		printf("\t%s", ctime(&(item->endtime)));
+	//while(1){ /* use it only to demonstrate gdb potencial */
+	while (item != NULL){
+		printf("PID: %d\t -> StartTime: %s", item->pid, ctime(&(item->starttime)));
+		printf("\t -> EndTime: %s", ctime(&(item->endtime)));
 		item = item->next;
 	}
-	printf("-- end of list.\n");
+
+	printf("> > >  End of list.\n\n");
 }
