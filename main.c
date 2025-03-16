@@ -8,6 +8,7 @@
 #include <time.h>
 #include "list.h"
 
+// Paulo
 
 /*
  * main program
