@@ -4,7 +4,6 @@
 #include <time.h>
 #include "TAD.h"
 
-// Assumindo que as funções inserirTarefa, complete e outras estão implementadas, além das estruturas Pilha e Lista.
 
 int main() {
     Pilha *pi = criarPilha();
