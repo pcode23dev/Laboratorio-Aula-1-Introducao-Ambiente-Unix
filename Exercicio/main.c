@@ -4,6 +4,7 @@
 #include <time.h>
 #include "TAD.h"
 
+// Assumindo que as funções inserirTarefa, complete e outras estão implementadas, além das estruturas Pilha e Lista.
 
 int main() {
     Pilha *pi = criarPilha();
@@ -12,7 +13,7 @@ int main() {
 
     printf("< < GERENCIADOR DE TAREFAS > >\n");
     while (1) {
-        printf("\nDigite um comando (new <prioridade> <id-tarefa>, list <prioridade>, complbreak;ete <id-tarefa>, ou 'exit' para sair):\n$ ");
+        printf("\nDigite um comando (new <prioridade> <id-tarefa>, list <prioridade>, complete <id-tarefa>, ou 'exit' para sair):\n$ ");
         fgets(comando, sizeof(comando), stdin); // Lê o comando
 
        

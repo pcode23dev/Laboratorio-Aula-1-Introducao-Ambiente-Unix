@@ -41,7 +41,7 @@ void listarTarefa(Pilha *pi, int prioridade){
 	if (item){
 		printf("\n> > > Listando tarefa com prioridade %d...\n", prioridade);
 		do{
-			if (item->prioridade == prioridade){
+			if (item->prioridade >= prioridade){
                 printf("ID tarefa: %s\t | Prioridade: %d\t | Data criacao: %s", 
                     item->idTarefa, item->prioridade, ctime(&(item->dataCriacao)));
 			} 
