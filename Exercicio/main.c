@@ -50,10 +50,9 @@ int main() {
             printf("Saindo do programa...\n");
             sleep(2);
             freePilha(pi);
+            return 0;
         } else {
             printf("Comando desconhecido! Tente novamente.\n");
         }
     }
-
-    return 0;
 }
