@@ -9,13 +9,14 @@
 int main() {
     Pilha *pi = criarPilha();
 
-    char comando[100]; // Buffer para armazenar comandos do usuário
+    char comando[100];
+
     printf("< < GERENCIADOR DE TAREFAS > >\n");
     while (1) {
-        printf("\nDigite um comando (new <prioridade> <id-tarefa>, list <prioridade>, complete <id-tarefa>, ou 'exit' para sair):\n$ ");
+        printf("\nDigite um comando (new <prioridade> <id-tarefa>, list <prioridade>, complbreak;ete <id-tarefa>, ou 'exit' para sair):\n$ ");
         fgets(comando, sizeof(comando), stdin); // Lê o comando
 
-        // Remove o caractere de nova linha, se presente
+       
         comando[strcspn(comando, "\n")] = 0;
 
         if (strncmp(comando, "new", 3) == 0) {
@@ -45,16 +46,13 @@ int main() {
                 printf("Comando inválido! Use: complete <id-tarefa>\n");
             }
         } else if (strcmp(comando, "exit") == 0) {
-            // Comando exit
             printf("Saindo do programa...\n");
-            break;
+            sleep(2);
+            freePilha(pi);
         } else {
             printf("Comando desconhecido! Tente novamente.\n");
         }
     }
-
-    // Liberar a memória ao sair
-    freePilha(pi);
 
     return 0;
 }
